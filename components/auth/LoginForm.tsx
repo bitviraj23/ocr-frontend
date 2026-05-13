@@ -30,8 +30,8 @@ export default function LoginForm() {
       const companyRes = await companyOwnerLogin(payload).catch(() => null);
       const companyToken = companyRes ? extractToken(companyRes) : null;
       if (companyToken) {
-        const apiKey = companyRes.apiKey ?? companyRes.api_key ?? null;
-        const apiSecret = companyRes.apiSecret ?? companyRes.api_secret ?? null;
+       const apiKey = companyRes?.apiKey ?? companyRes?.api_key ?? null;
+const apiSecret = companyRes?.apiSecret ?? companyRes?.api_secret ?? null;
         setAuthState({ token: companyToken, role: "ADMIN", apiKey, apiSecret });
         if (remember) localStorage.setItem("remember_email", email);
         router.replace("/billing");

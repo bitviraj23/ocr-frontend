@@ -15,6 +15,12 @@ type AuthResponse = {
   accessToken?: string;
   refreshToken?: string;
   message?: string;
+
+  apiKey?: string;
+  api_key?: string;
+
+  apiSecret?: string;
+  api_secret?: string;
 };
 
 export async function signupCompany(payload: SignupPayload) {
